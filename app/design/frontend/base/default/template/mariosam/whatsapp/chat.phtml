@@ -1,0 +1,49 @@
+<?php
+/**
+ * HTML chat
+ * 
+ * @author      MarioSAM <eu@mariosam.com.br>
+ * @version     1.0.0
+ * @date        2021/01
+ * @copyright   Blog do Mario SAM
+ * 
+ * Create button chat for whatsapp on website frontend.
+ */
+
+/** inicializando model e variaveis */
+if ( $this->getEnabled() ) {
+//se o dispositivo mobile/desktop eh permitido (true) nas configuracoes
+if ( $this->getDevice() ) {
+
+$_position = $this->getPosition();
+$_whatsurl = $this->getWhatsUrl();
+$_buttoncolor = $this->getButtonColor();
+$_buttonmessage = $this->getButtonMessage();
+?>
+<?php /* CSS styles */ ?>
+<style type="text/css">
+    <?php echo $this->getCssCustom(); ?>
+</style>
+
+<?php /* Javascript controls */ ?>
+<script type="text/javascript">
+//<![CDATA[
+document.observe("dom:loaded", function() {
+    <?php echo $this->getJsCustom(); ?>
+});
+//]]>
+</script>
+
+<?php /* HTLM displays  */ ?>
+<!-- button -->
+<a target="_blank" href="<?php echo $_whatsurl; ?>" class="float float-<?php echo $_position; ?> float-floating" style="background-color: #<?php echo $_buttoncolor; ?>">
+    <i class="whatsapp-icon-3x" style="padding-right:0px!important;"></i>
+</a>
+<!-- text -->
+<div class="label-container label-container-<?php echo $_position; ?> float-floating">
+    <div class="label-text"><?php echo $_buttonmessage; ?></div>
+    <i class="icon icon-play label-arrow"></i>
+</div>
+
+<?php } /* if do device */ ?>
+<?php } /* getEnabled */ ?>

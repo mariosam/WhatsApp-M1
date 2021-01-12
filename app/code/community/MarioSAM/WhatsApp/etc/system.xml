@@ -1,0 +1,186 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * XML system
+ * 
+ * @author      MarioSAM <eu@mariosam.com.br>
+ * @version     1.0.0
+ * @date        2021/01
+ * @copyright   Blog do Mario SAM
+ * 
+ * This XML prepare the admin page config of this module.
+ */
+-->
+<config>
+    <!-- Put a menu option on left menu -->
+    <tabs>
+        <mariosam translate="label" module="whatsapp">
+            <label>Mario SAM</label>
+            <sort_order>100</sort_order>
+        </mariosam>
+    </tabs>
+    <!-- create the sections of this module -->
+    <sections>
+        <whatsapp translate="label comment" module="whatsapp">
+            <label>WhatsApp</label>
+            <tab>mariosam</tab>
+            <frontend_type>text</frontend_type>
+            <sort_order>800</sort_order>
+            <show_in_default>1</show_in_default>
+            <show_in_website>1</show_in_website>
+            <show_in_store>1</show_in_store>
+            <groups>
+                <!-- block to set info about the privacy message -->
+                <whats_config translate="label comment">
+                    <label>WhatsApp Settings</label>
+                    <comment><![CDATA[How to use WhatsApp? Access the Mario SAM blog and read the post.]]></comment>
+                    <frontend_type>text</frontend_type>
+                    <sort_order>10</sort_order>
+                    <show_in_default>1</show_in_default>
+                    <show_in_website>1</show_in_website>
+                    <show_in_store>1</show_in_store>                
+                    <fields>
+                        <!-- Turn On or Turn off this module -->
+                        <enabled translate="label">
+                            <label>Enable</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <sort_order>10</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </enabled>
+                        <!-- Set the message to show the user about your policy -->
+                        <phone translate="label">
+                            <label>Phone Number</label>
+                            <frontend_type>text</frontend_type>
+                            <validate>validate-number</validate>
+                            <sort_order>20</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <comment>Whatsapp number: 55 48 98765 4321. (no spaces)</comment>
+                        </phone>
+                        <!-- Set the message to show the user about your policy -->
+                        <button translate="label">
+                            <label>Button Message</label>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>30</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <comment>Message next to the button (optional).</comment>
+                        </button>
+                        <!-- Set the message to show the user about your policy -->
+                        <welcome>
+                            <label>Welcome Message</label>
+                            <frontend_type>textarea</frontend_type>
+                            <sort_order>40</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <comment>Message when chat opens (optional).</comment>
+                        </welcome>
+                        <!-- Set the message to show the user about your policy -->
+                        <url translate="label">
+                            <label>Show URL</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <sort_order>50</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <comment>Include site URL with the chat?</comment>
+                        </url>
+                    </fields>
+                </whats_config>
+                <!-- block to set info about the privacy message -->
+                <whats_display translate="label">
+                    <label>WhatsApp Frontend</label>
+                    <frontend_type>text</frontend_type>
+                    <sort_order>20</sort_order>
+                    <show_in_default>1</show_in_default>
+                    <show_in_website>1</show_in_website>
+                    <show_in_store>1</show_in_store>                
+                    <fields>
+                        <!-- -->
+                        <position translate="label">
+                            <label>Screen Position</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>whatsapp/position</source_model>
+                            <sort_order>10</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <comment>Choose your button position.</comment>
+                        </position>
+                        <!-- Set the message to show the user about your policy -->
+                        <device translate="label">
+                            <label>ShowUp Device</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>whatsapp/devices</source_model>
+                            <sort_order>20</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <comment>Which device do you want to show up the button?</comment>
+                        </device>
+                        <!-- -->
+                        <button translate="label">
+                            <label>Button Color</label>
+                            <frontend_type>text</frontend_type>
+                            <validate>validate-length minimum-length-3 maximum-length-6</validate>
+                            <sort_order>30</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <comment>Insert your favorite color.</comment>
+                        </button>
+                        <!-- -->
+                        <css>
+                            <label>Custom CSS</label>
+                            <frontend_type>textarea</frontend_type>
+                            <sort_order>40</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <comment>You can add personal css script.</comment>
+                        </css>
+                        <!-- -->
+                        <js>
+                            <label>Custom JS</label>
+                            <frontend_type>textarea</frontend_type>
+                            <sort_order>50</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <comment>You can add personal javascript code.</comment>
+                        </js>
+                    </fields>
+                </whats_display>
+                <!-- block to set info about the privacy message -->
+                <whats_next_version translate="label comment">
+                    <label>Expected for the next versions</label>
+                    <frontend_type>text</frontend_type>
+                    <sort_order>999</sort_order>
+                    <show_in_default>1</show_in_default>
+                    <show_in_website>1</show_in_website>
+                    <show_in_store>1</show_in_store>  
+                    <comment><![CDATA[Below a list of things that I expect to implement in the next version of WhatsApp module:]]></comment>
+                    <fields>
+                        <!-- -->
+                        <my_contact translate="label">
+                            <label>My Contact</label>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>99</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <comment>You can talk with me and/or hire me!</comment>
+                        </my_contact>
+                    </fields>
+                </whats_next_version>
+            </groups>
+        </whatsapp>
+    </sections>
+</config>

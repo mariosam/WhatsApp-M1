@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * XML default
+ * 
+ * @author      MarioSAM <eu@mariosam.com.br>
+ * @version     1.0.0
+ * @date        2021/01
+ * @copyright   Blog do Mario SAM
+ * 
+ * Insert the new file into the Magento theme to load the code.
+ */
+-->
+<layout version="1.0.0">
+    <!-- em todas as paginas -->
+    <default>
+        <reference name="head">
+            <action method="addCss"><stylesheet>css/mariosam/whatsapp/whatsapp.css</stylesheet></action>
+        </reference>
+        <!-- soon as the page start to loading -->
+        <reference name="after_body_start">
+            <block type="whatsapp/whatsappblock" name="whatsapp_chat" template="mariosam/whatsapp/chat.phtml" ifconfig="whatsapp/whats_config/enabled"/>
+        </reference>
+    </default>
+</layout>
